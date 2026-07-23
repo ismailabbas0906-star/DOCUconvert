@@ -59,7 +59,11 @@ convertBtn.addEventListener('click', async () => {
     const data = await response.json();
 
     if (response.ok) {
-      const downloadUrl = data.Files[0].Url;
+      let downloadUrl = data.Files[0].Url;
+      // FIX: Ensure the browser knows this is an external link
+      if (!downloadUrl.startsWith('http')) {
+        downloadUrl = 'https://' + downloadUrl;
+      }
       statusMessage.innerHTML = `✅ Success! <a href="${downloadUrl}" target="_blank" style="color: #4299e1; font-weight: bold; text-decoration: none;">Tap here to download your file</a>`;
     } else {
       statusMessage.textContent = `❌ Error: ${data.Message || 'Conversion failed.'}`;
