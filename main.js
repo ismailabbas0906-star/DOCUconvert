@@ -70,7 +70,7 @@ convertBtn.addEventListener('click', async () => {
     }
   } catch (error) {
     console.error(error);
-    statusMessage.textContent = '❌ A network error occurred. Please try again.';
+    statusMessage.textContent = '❌ Error details: ' + error.message;
   } finally {
     convertBtn.textContent = 'Convert Another Document';
     convertBtn.disabled = false;
