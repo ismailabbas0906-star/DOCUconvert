@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DocuConvert</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="converter-card">
+    <h1>DocuConvert</h1>
+    <p>Convert your documents securely and instantly.</p>
+
+    <!-- File Upload Area -->
+    <div class="drop-zone" id="drop-zone">
+      <span class="drop-zone-text" id="drop-text">Tap to select or drop a document here</span>
+      <input type="file" id="file-input" accept=".pdf,.docx,.pptx" hidden>
+    </div>
+
+    <!-- Conversion Options -->
+    <div class="controls">
+      <select id="conversion-type">
+        <option value="docx-to-pdf">Word (.docx) to PDF</option>
+        <option value="ppt-to-pdf">PowerPoint (.pptx) to PDF</option>
+        <option value="pdf-to-docx">PDF to Word (.docx)</option>
+        <option value="pdf-to-ppt">PDF to PowerPoint (.pptx)</option>
+      </select>
+      <button id="convert-btn" disabled>Convert Document</button>
+    </div>
+
+    <!-- Status Message -->
+    <div id="status-message" class="status-message"></div>
+  </div>
+  
+  <script src="main.js"></script>
+</body>
+</html>
+
